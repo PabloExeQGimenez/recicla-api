@@ -1,15 +1,30 @@
+type RecuperadorProps = {
+  id: string;
+  name: string;
+  lastName: string;
+  active: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  dni?: string;
+  cuil?: string;
+  birthdate?: Date;
+}
+
 export class Recuperador {
-  constructor(
-    public readonly id: string,
-    public name: string,
-    public lastName: string,
-    public dni?: string,
-    public cuil?: string,
-    public birthdate?: Date,
-    public active: boolean,
-    public createdAt: Date,
-    public updatedAt: Date,
-  ) {}
+
+  readonly id: string;
+  name: string;
+  lastName: string;
+  active: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  dni?: string;
+  cuil?: string;
+  birthdate?: Date;
+
+  constructor(props: RecuperadorProps) {
+    Object.assign(this, props)
+  }
 
   activate() {
     this.active = true;
