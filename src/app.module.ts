@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { RecuperadorModule } from './modules/recuperador/recuperador.module';
 
 @Module({
-  imports: [],
+  imports: [RecuperadorModule],
   controllers: [],
   providers: [],
 })

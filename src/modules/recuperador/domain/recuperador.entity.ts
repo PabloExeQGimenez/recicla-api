@@ -8,10 +8,9 @@ type RecuperadorProps = {
   dni?: string;
   cuil?: string;
   birthdate?: Date;
-}
+};
 
 export class Recuperador {
-
   readonly id: string;
   name: string;
   lastName: string;
@@ -23,14 +22,16 @@ export class Recuperador {
   birthdate?: Date;
 
   constructor(props: RecuperadorProps) {
-    Object.assign(this, props)
+    Object.assign(this, props);
   }
 
   activate() {
     this.active = true;
+    this.updatedAt = new Date();
   }
 
   deactivate() {
     this.active = false;
+    this.updatedAt = new Date();
   }
 }

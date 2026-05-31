@@ -1,21 +1,11 @@
 import { Recuperador } from '../domain/recuperador.entity';
 import { RecuperadorRepository } from '../domain/recuperador.repository';
-
-interface CreateRecuperadorDTO {
-  name: string;
-  lastName: string;
-  dni?: string;
-  cuil?: string;
-  birthdate?: Date;
-  active: boolean;
-}
+import type { CreateRecuperadorDTO } from '../presentation/schemas/create-recuperador.schema';
 
 export class CreateRecuperadorUseCase {
-  
   constructor(private readonly recuperadorRepository: RecuperadorRepository) {}
 
   async execute(data: CreateRecuperadorDTO): Promise<Recuperador> {
-    
     const recuperador = new Recuperador({
       id: crypto.randomUUID(),
       name: data.name,
